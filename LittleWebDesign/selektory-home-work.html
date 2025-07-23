@@ -1,0 +1,158 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Little Web Design</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="selectory-home-work.css" type="text/css">
+    <style>
+      body, div, p, ul, h1, h2, footer, li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+      } 
+      h1, h2 {
+        font-family: Bitter, serif;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 25px;
+        margin: 50px;
+      }
+      header, footer, div#body {
+        font-family: Lato, sans-serif;
+      }
+      #body {
+        text-align: center;
+        width: 55%;
+        margin: 0 auto;
+      }
+      header, footer {
+        text-align: center;
+      }
+      header, footer {
+        background-color: #464646;
+      }
+      header, h2 ~ p {
+        background-color: #dbeaee;
+      }
+      h1 ~ p {
+        color: #464646;
+        margin: 30px;
+      }
+      h2 ~ p {
+        text-transform: uppercase;
+        border-radius: 30px;
+        padding: 20px;  
+        margin: 15px;
+      }
+      ul > li {
+        display: inline-block;
+        padding: 15px 10px;
+      }
+      ul {
+        background-color: #464646;
+      }
+      ul a, footer {
+        color: white;
+        padding: 30px;
+      }
+      ul a {
+        text-decoration: none;
+      }
+      div.star {
+        display: inline-block;
+        margin: 10px;
+      }
+      nav:after {
+      content: "";
+      display: block;
+      background-color: #dbeaee;
+      height: 15px; 
+      margin-bottom: 20px;
+      }
+      h2 ~ p:hover {
+        font-weight: 900;
+        color: #FFF;
+        background: #2874a6d7 ;
+        cursor: pointer;
+      }
+      ul a:hover {
+        color: #425c63;
+        background: #dbeaee;
+      }
+      ul a:active {
+        color: #2874a6d7;
+      }
+      .stars-group:hover .star img {
+          content: url('./colored-diamond.png');
+      }
+      .star:hover ~ .star img {
+          content: url('./white-diamond.png');
+      }
+      
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="stars-group">
+        <div class="star">
+            <img src="./white-diamond.png" width="100">
+        </div>
+        <div class="star">
+            <img src="./white-diamond.png" width="100">
+        </div>
+        <div class="star">
+            <img src="./white-diamond.png" width="100">
+        </div>
+        <div class="star">
+            <img src="./white-diamond.png" width="100">
+        </div>
+        <div class="star">
+            <img src="./white-diamond.png" width="100">
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="">Features</a></li>
+          <li><a href="">Resources</a></li>
+          <li><a href="">Community</a></li>
+          <li><a href="">Gallery</a></li>
+          <li><a href="">Enterprise</a></li>
+          <li><a href="">Pricing</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="body">
+
+        <h1>Little Web Design Agency</h1>
+
+        <p>We are a small web design agency based in Sheffield, UK. Over the last years we've worked with many companies and made a reputation for building websites that look great and are easy-to-use.</p>
+
+        <p>We always take and shape your ideas and focus on simple, elegant and usable solutions. We bring your project to life with clean and standards-based code using the latest techniques and technologies.</p>
+
+        <h2>Our services</h2>
+
+        <p>Design</p>
+
+        <p>UI / UX</p>
+
+        <p>Content</p>
+    </div>
+    <footer>
+      <p>&#169; 2015 Little Web Design Agency</p>
+    </footer>
+
+  </body>
+  </html>

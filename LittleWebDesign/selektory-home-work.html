@@ -92,13 +92,19 @@
       ul a:active {
         color: #2874a6d7;
       }
-      .stars-group:hover .star img {
+      div.star {
+        float:right;
+      }
+      .star img:hover, .star:hover~.star img {
           content: url('./colored-diamond.png');
+          width: 100px;
       }
-      .star:hover ~ .star img {
-          content: url('./white-diamond.png');
+      nav {
+        clear: both;
       }
-      
+      .stars-group {
+        margin-right: 30%;
+      }
 
     </style>
   </head>

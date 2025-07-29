@@ -94,35 +94,39 @@
         border-bottom: solid 1px #0B5345;
         align-items: center;
         margin: 0;
-      }
-      .article {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
       }
       div.description {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      } 
+        width: 90%;
+      }
       .time, .price {
         background-color: #81aea52b;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
+        padding: 10px 4vw;
+        
+      }
+      .time {
         margin-left: 70px;
-        display: inline-block;
-        padding: 10px 70px;
+      }
+      p.title, p.steps {
+        width: 50%;
+        box-sizing: border-box;
       }
     }
-    @media all and (max-width: 750px) {
-      .article {
+    @media all and (max-width: 650px) {
+      article {
+        display: flex;
         flex-direction: column;
-      } 
+        justify-content: center;
+        align-items: center;
+      }
+
       .time, .price {
-        width: 50%;
-        margin-left: 70px;
+        margin-left: 0;
+        width: 67%;
       }
     }
   </style>

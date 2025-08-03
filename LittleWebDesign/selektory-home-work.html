@@ -25,7 +25,7 @@
       }
       h2 {
         font-size: 25px;
-        margin: 50px;
+        margin: 40px;
       }
       header, footer, div#body {
         font-family: Lato, sans-serif;
@@ -41,14 +41,10 @@
       header, footer {
         background-color: #464646;
       }
-      header, h2 ~ p {
+      header, h2.h2 ~ p {
         background-color: #dbeaee;
       }
-      h1 ~ p {
-        color: #464646;
-        margin: 30px;
-      }
-      h2 ~ p {
+      h2.h2 ~ p {
         text-transform: uppercase;
         border-radius: 30px;
         padding: 20px;  
@@ -79,7 +75,7 @@
       height: 15px; 
       margin-bottom: 20px;
       }
-      h2 ~ p:hover {
+      h2.h2 ~ p:hover {
         font-weight: 900;
         color: #FFF;
         background: #2874a6d7 ;
@@ -105,12 +101,101 @@
       .stars-group {
         margin-right: 30%;
       }
-
+      @keyframes rotateWheel {
+        from {
+          rotate: 0deg;
+        }
+        to {
+          rotate: 360deg;
+        }
+      }
+      .spinner { 
+        animation: rotateWheel infinite linear 20s;
+        height: 20px;
+      }
+      @keyframes bellRotate{
+        0% { 
+            rotate: 0deg;
+        }
+        25% {
+            rotate: -45deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        75% {
+          rotate: 45deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+      .bell {
+        height: 20px;
+        animation: bellRotate 4s linear infinite;
+      }
+      .secondp, .firstp {
+        color: #464646;
+        margin: 30px;
+        display: flex;
+      }
+      .secondh1 {
+        margin: 40px 0;
+      }
+      .textfield {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 675px;
+        align-items: center;
+      }
+      .textfield > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 15px auto;
+        flex-grow: 1;
+        transition: transform 0.75s linear;
+      }
+      .textfield > div:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+      .textfield > div img {
+        flex-grow: 2;
+        max-width: 450px;
+      }
+      .textfield .column {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        flex-grow: 1;
+        width: 225px;
+      }
+      .textfield > div:hover {
+        transform: scale(1.2); 
+      }
+      /* .textfield .column p {
+        min-width: 300px;
+      } */
+      /* @media all and (max-width:1024px) {
+          .textfield > div img {
+                  width: 266px;
+          }
+          .textfield > div:nth-child(2n) {
+              flex-direction: row;
+          }
+          .textfield > div:hover {
+        transform: none; 
+      }
+      }
+      @media all and (max-width:768px) {
+        
+      } */
     </style>
   </head>
 
   <body>
-    <header>
+    <header>  
       <div class="stars-group">
         <div class="star">
             <img src="./white-diamond.png" width="100">
@@ -143,19 +228,56 @@
     <div id="body">
 
         <h1>Little Web Design Agency</h1>
-
-        <p>We are a small web design agency based in Sheffield, UK. Over the last years we've worked with many companies and made a reputation for building websites that look great and are easy-to-use.</p>
-
-        <p>We always take and shape your ideas and focus on simple, elegant and usable solutions. We bring your project to life with clean and standards-based code using the latest techniques and technologies.</p>
-
-        <h2>Our services</h2>
+        <div class="firstp">
+            <img src="./spinner-icon.png" class="spinner">
+            <p>We are a small web design agency based in Sheffield, UK. Over the last years we've worked with many companies and made a reputation for building websites that look great and are easy-to-use.</p>
+        </div>
+        <div class="secondp">
+            <img src="./bell-icon.png" class="bell">
+            <p>We always take and shape your ideas and focus on simple, elegant and usable solutions. We bring your project to life with clean and standards-based code using the latest techniques and technologies.</p>
+        </div>
+        <h2 class="h2">Our services</h2>
 
         <p>Design</p>
 
         <p>UI / UX</p>
 
         <p>Content</p>
+        <h1 class="secondh1">We design experiences</h1>
+        <div class="textfield">
+            <div> 
+              <div class="column" >
+              <h2>Branding</h2>
+              <p>Ignite your brand's potential and captivate audiences with our strategic design approach.</p>
+              </div>
+              <img src="./brand.jpg">
+            </div>
+            <div>
+              <div class="column">
+              <h2>Web design</h2>
+              <p>Stand out with our innovative website design that combine aesthetics and usability.</p>
+              </div>
+              <img src="./woman-sitting-cafe-drinking-coffee-working-computer.jpg">
+            </div>
+            <div>
+              <div class="column">
+              <h2>UI/UX design</h2>
+              <p>Maximize user engagement with our cutting-edge UI/UX design that align with user needs.</p>
+              <p>We deliver digital solutions that blend advanced UI/UX design with conversion-driven strategies to inspire, captivate, and drive results.</p>
+              </div>
+              <img src="./pexels-photo-3183150.jpeg">
+            </div>
+            <div>
+              <div class="column">
+              <h2>Custom Illustrations</h2>
+              <p>One of our favourite things to do is design custom illustrations. It's a process that starts on paper with brainstorming and sketching.</p> 
+              <p>Concepts are taken to the iPad to be sketched in before landing in Adobe Illustrator</p>
+              </div>
+              <img src="./drawing.avif">
+            </div>
+        </div>
     </div>
+    
     <footer>
       <p>&#169; 2015 Little Web Design Agency</p>
     </footer>

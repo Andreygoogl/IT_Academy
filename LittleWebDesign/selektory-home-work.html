@@ -23,7 +23,7 @@
       h1 {
         font-size: 30px;
       }
-      h2 {
+      h2.h2 {
         font-size: 25px;
         margin: 40px;
       }
@@ -173,13 +173,15 @@
       }
       .textfield > div:hover {
         transform: scale(1.2); 
+      } 
+      .column > h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+
       }
-      /* .textfield .column p {
-        min-width: 300px;
-      } */
-      /* @media all and (max-width:1024px) {
+       @media all and (max-width:970px) {
           .textfield > div img {
-                  width: 266px;
+                  max-width: 300px;
           }
           .textfield > div:nth-child(2n) {
               flex-direction: row;
@@ -188,9 +190,21 @@
         transform: none; 
       }
       }
-      @media all and (max-width:768px) {
-        
-      } */
+      @media all and (max-width:760px) {
+        .textfield {
+          flex-direction: column;
+        }
+        .textfield > div:nth-child(2n) {
+              flex-direction: column;
+          }
+        .textfield > div {
+          flex-direction: column;
+        }
+        .textfield > div > img {
+          margin-top: 20px;
+        }
+      } 
+
     </style>
   </head>
 

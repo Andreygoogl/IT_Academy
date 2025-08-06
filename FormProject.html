@@ -10,11 +10,17 @@
         }
         input[type="date"]:valid + .hidden {
             display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        label[name="time"] {
+            width: 100%;
         }
         input[type="time"] {
             padding: 10px;
             border-radius: 5px;
-            margin-top:5px;
+            margin:10px;
+            display: block;
         }
         form {
             max-width: 600px;
@@ -129,9 +135,8 @@
             <label for id="date">Дата начала*</label>
             <input type="date" required name="date" min="2024-01-01">
             <div class="hidden">
-                <label>Предпочитаемое время занятий(между 13:00 и 20:00)<br>
+                <label name="time">Предпочитаемое время занятий(между 13:00 и 20:00)</label>
                     <input type="time" name="time" required min="13:00" max="20:00">
-                </label>
             </div>
         </fieldset>
         <fieldset>

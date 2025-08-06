@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        input[type="date"]:valid + .hidden {
+            display: flex;
+        }
+        input[type="time"] {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top:5px;
+        }
+        form {
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+        :invalid:not(fieldset, form) {
+            border: 2px solid #dc3545;
+        }
+        :valid:not(fieldset, form) {
+            border: 2px solid #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 10px 30px;
+        }
+        legend {
+            color: #555;
+        }
+        label {
+            color: #444;
+            margin-left: 10px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="submit"] {
+            border-radius: 5px;
+            margin: 20px;
+            padding: 5px 0;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        fieldset {
+            display: flex;
+            flex-direction: column;
+        }
+        input:not(input[type="radio"], input[type="time"]), select{
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        input[type="radio"] {
+            margin-top:5px;
+        }
+        label.noexp {
+            margin-left:0;
+        }
+        @media all and (max-width:500px) {
+            .row {
+                flex-direction: column;
+            }
+            .exp {
+                display: flex;
+                flex-direction: column;
+            }
+            .beg, .pro {
+                margin-left:0 ;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <h1>Регистрация на онлайн-курс</h1>
+        <fieldset>
+            <legend>Личные данные</legend>
+            <label for id="name">ФИО*</label>
+            <input type="text" required name="name" placeholder="Иванов Иван Иванович">
+            <div class="row">
+                <div class="column"> 
+                    <label for id="email">Email*</label>
+                    <input type="email" name="email" required placeholder="example@mail.com">
+                </div>
+                <div class="column">
+                    <label for id="password">Пароль*</label>
+                    <input type="password" name="password" required placeholder="Не менее 8 символов" minlength="8">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset name="course">
+            <legend>Выбор курса</legend>
+            <label for id="course">Курс*</label>
+            <select required name="course">
+                <option selected disabled>Выберите курс</option>
+                <option>Веб-разработка</option>
+                <option>Data Science</option>
+                <option>Графический дизайн</option>
+            </select>
+            <label for id="date">Дата начала*</label>
+            <input type="date" required name="date" min="2024-01-01">
+            <div class="hidden">
+                <label>Предпочитаемое время занятий(между 13:00 и 20:00)<br>
+                    <input type="time" name="time" required min="13:00" max="20:00">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Дополнительно</legend>
+            <label class="exp">Опыт в IT:<br>
+            <label class="noexp">
+                Нет опыта
+                <input type="radio" name="choose" value="Noexp">
+            </label>
+            <label class="beg">
+                Начинающий
+                <input type="radio" name="choose" value="Beg">
+            </label>
+            <label class="pro">
+                Опытный
+                <input type="radio" name="choose" value="Exp" checked><br><br>
+            </label>
+            </label>
+            <label class="chck">Я согласен на обработку персональных данных*
+                <input type="checkbox" name="check" required>
+            </label>
+            
+        </fieldset>
+        <input type="submit" name="submit" value="Отправить заявку">
+    </form>
+</body>
+</html>

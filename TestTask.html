@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+            gap:30px;
+
+        }
+        div > div{
+            position: relative;
+            border: 2px grey solid;
+            text-align: center;
+            transition: transform 1s linear;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        div > div::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: url('./back.png');
+            background-position: center;
+            background-size:contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        h1, p {
+            position: relative;
+            z-index: 1;
+            margin: 10px 0;
+        }
+        div > div:hover {
+            transform: scale(1.1);
+            box-shadow: 10px 5px 5px grey;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+    <div>
+        <h1>Заголовок</h1>
+        <p>Описание карточки с текстом</p>
+    </div>
+</div>
+</body>
+</html>

@@ -59,7 +59,7 @@
       }
       ul a, footer {
         color: white;
-        padding: 30px;
+        padding: 20px;
       }
       ul a {
         text-decoration: none;
@@ -99,7 +99,7 @@
         clear: both;
       }
       .stars-group {
-        margin-right: 30%;
+        display: inline-block;
       }
       @keyframes rotateWheel {
         from {
@@ -179,6 +179,9 @@
         margin-bottom: 30px;
 
       }
+      svg {
+        display: none;
+      }
        @media all and (max-width:970px) {
           .textfield > div img {
                   max-width: 300px;
@@ -204,7 +207,49 @@
           margin-top: 20px;
         }
       } 
-
+      @media all and (max-width: 784px) {
+          ul > li, .stars-group {
+            display: none;
+          }
+          nav::before {
+            content: "";
+            display: block;
+            background-color: #dbeaee;
+            height: 15px; 
+          }
+          nav::after {
+            margin-bottom: 0;
+          }
+          svg {
+            display: inline-block;
+            position: relative;
+            bottom: 57px;
+            left: 85%;
+          }
+          ul {
+            height: 50px ;
+            display: flex;
+            flex-direction: column;
+          }
+          ul {
+            position: relative;
+          }
+          li {
+            position: relative;
+            top:50px;
+          }
+          ul:hover li, li:hover li, svg:hover{
+            display: block;
+            width: 100%;
+            background-color: #464646;
+          }
+          li > a {
+            padding: 15px;
+          }
+          li > a:hover {
+            width: 100%;
+          }
+      }
     </style>
   </head>
 
@@ -240,7 +285,7 @@
     </header>
 
     <div id="body">
-
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" width="40" viewBox="0 0 640 640"><path fill="#ffffff" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
         <h1>Little Web Design Agency</h1>
         <div class="firstp">
             <img src="./spinner-icon.png" class="spinner">

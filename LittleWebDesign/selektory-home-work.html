@@ -112,6 +112,8 @@
       .spinner { 
         animation: rotateWheel infinite linear 20s;
         height: 20px;
+        position: relative;
+        z-index: 0;
       }
       @keyframes bellRotate{
         0% { 
@@ -133,6 +135,8 @@
       .bell {
         height: 20px;
         animation: bellRotate 4s linear infinite;
+        position: relative;
+        z-index: 0;
       }
       .secondp, .firstp {
         color: #464646;
@@ -208,46 +212,74 @@
         }
       } 
       @media all and (max-width: 784px) {
-          ul > li, .stars-group {
+            ul > li, .stars-group {
             display: none;
           }
-          nav::before {
+          ul a {
+            padding: 15px;
+          }
+          svg {
+            display: block;
+            position: relative;
+            float: right;
+            bottom: 35px; 
+          }
+          nav::after {
+            content: none;
+          }
+          nav {
+            margin-bottom: 20px;
+            height: 60px;
+          }
+            
+           nav::before {
             content: "";
             display: block;
             background-color: #dbeaee;
             height: 15px; 
           }
-          nav::after {
-            margin-bottom: 0;
-          }
-          svg {
-            display: inline-block;
-            position: relative;
-            bottom: 57px;
-            left: 85%;
-          }
           ul {
-            height: 50px ;
-            display: flex;
+            height: 34px ;
+            display: flex;  
             flex-direction: column;
-          }
-          ul {
             position: relative;
           }
           li {
-            position: relative;
-            top:50px;
-          }
-          ul:hover li, li:hover li, svg:hover{
-            display: block;
             width: 100%;
+            position: absolute;
+            display: none;
             background-color: #464646;
+            z-index: 1;
           }
-          li > a {
-            padding: 15px;
+          li:nth-child(1) {
+            top: 34px;
           }
-          li > a:hover {
-            width: 100%;
+          li:nth-child(2) {
+            top: 83.2px;
+          }
+          li:nth-child(3) {
+            top: 132.4px;
+          }
+          li:nth-child(4) {
+            top:181.6px;
+          }
+          li:nth-child(5) {
+            top: 230.8px;
+          }
+          li:nth-child(6) {
+            top: 280px;
+          }
+          ul:hover li {
+            display: block;
+          }
+          ul li:hover  {
+            background-color: #dbeaee;
+          }
+          li:hover > a {
+            color: #425c63;
+          }
+          svg:hover ul li {
+            display: block;
           }
       }
     </style>
@@ -281,11 +313,11 @@
           <li><a href="">Enterprise</a></li>
           <li><a href="">Pricing</a></li>
         </ul>
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" width="40" viewBox="0 0 640 640"><path fill="#ffffff" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
       </nav>
     </header>
 
     <div id="body">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" width="40" viewBox="0 0 640 640"><path fill="#ffffff" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
         <h1>Little Web Design Agency</h1>
         <div class="firstp">
             <img src="./spinner-icon.png" class="spinner">

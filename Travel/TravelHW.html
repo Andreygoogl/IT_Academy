@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(300px, 1fr));
+            grid-template-areas: 
+            "Spain Bali Bali"
+            "Spain Egypt Czech"
+            "Spain Turkey Italy";
+            gap: 15px;
+        }
+        div > div {
+            color: rgb(12, 10, 72);
+            font-size: 35px;
+            text-align: center;
+            line-height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div > div:nth-child(1) {
+            background:  linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Bali.jpg');
+            grid-area: Bali;
+        }
+        div > div:nth-child(2) {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Spain.jpg');
+            grid-area: Spain;
+        }
+        div > div:nth-child(3) {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Egypt.jpg');
+            grid-area: Egypt;
+        }
+        div > div:nth-child(4) {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Czech.jpg');
+            grid-area: Czech;
+        }
+        div > div:nth-child(5) {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Turkey.jpg');
+            grid-area: Turkey;
+        }
+        div > div:nth-child(6) {
+            background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('./images/Italy.jpg');
+            grid-area: Italy;
+        }
+        div > div:nth-child(1):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Bali.jpg');
+        }
+        div > div:nth-child(2):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Spain.jpg');
+        }
+        div > div:nth-child(3):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Egypt.jpg');
+        }
+        div > div:nth-child(4):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Czech.jpg');
+        }
+        div > div:nth-child(5):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Turkey.jpg');
+        }
+        div > div:nth-child(6):hover{
+            background-size: 110%;
+            color:transparent;
+            background: url('./images/Italy.jpg');
+        }
+        @media all and (max-width: 500px)
+        {
+            .body {
+                grid-template-columns: 1fr ;
+                grid-template-rows: repeat(6, minmax(300px, 1fr));
+                gap: 15px;
+                grid-template-areas: 
+                "Bali"
+                "Spain"
+                "Egypt"
+                "Czech"
+                "Turkey"
+                "Italy";
+            }
+        }
+        @media all and (max-width: 760px) and (min-width:501px) {
+        .body {
+            grid-template-rows: repeat(4, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+            "Bali Bali"
+            "Spain Egypt"
+            "Spain Czech"
+            "Turkey Italy";
+            gap: 15px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div>Бали</div>
+        <div>Испания</div>
+        <div>Египет</div>
+        <div>Чехия</div>
+        <div>Турция</div>
+        <div>Италия</div>
+    </div>
+</body>
+</html>

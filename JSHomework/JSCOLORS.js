@@ -38,6 +38,8 @@ switch (color) {
     case "#800080":
         alert("Фиолетовый");
         break;
-
+    default: 
+        alert("Нет такого цвета в радуге")
+        break;
     
 }

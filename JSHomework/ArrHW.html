@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button {
+            border-radius: 10px;
+            background-color: rgb(8, 190, 8);
+            border: none;
+            color:white;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+        button:hover {
+            background-color: rgb(4, 76, 4);
+        }
+    </style>
 </head>
 <body>
-    <script src="ArrHW.js"></script>
+    <form>
+        <fieldset>
+            <h1>Выбор книги</h1>
+            <label>Жанр:
+                <select id="genre">
+                    <option value="1" class="romance">Роман</option>
+                    <option value="2" class="detective">Детектив</option>
+                    <option value="3" class="fantasy">Фэнтези</option>
+                </select>
+            </label><br><br>
+            <label>Современная литература:
+                <input type="checkbox" name="modernLit" class="modern">
+            </label><br><br>
+            <label>Русский автор:
+                <input type="checkbox" name="rusAuthor" class="russian">
+            </label><br><br>
+            <button type="button" class="button">Получить рекомендацию</button><br><br>
+            <div class="result"></div>
+        </fieldset> 
+    </form>
+<script src="./ArrHW.js"></script>
 </body>
 </html>

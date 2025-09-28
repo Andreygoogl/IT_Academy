@@ -1,4 +1,3 @@
-"use strict"
 let books = [
     {
         title: "Война и мир",
@@ -75,49 +74,26 @@ let books = [
         ],
     },
 ]
-const getBookInfo = (book) => {
-    return alert(`Название: ${book.title}\nАвтор: ${book.author}\nГод: ${book.year}`);
-}
-const addRating = (book, userId, rating) => {
-    book.ratings[book.ratings.length] = {userId, rating};
-    console.log(book)
-}
-const getAverageRating = (book) => {
-    let sum = 0;
-    let i = 0;
-    for (let key of book.ratings) {
-        sum += key.rating;  
-        i++; 
+let btn = document.querySelector('.button')
+btn.onclick = searchBook = () => {
+    document.querySelector('.result').innerHTML = "";
+    let genre = document.getElementById('genre').value
+    let modern = document.querySelector('.modern')
+    let rus = document.querySelector('.russian')
+    let result = document.querySelector('.result')
+    let found = false;
+    for (let i = 0; i < books.length; i++)
+    {
+        let book = books[i];
+        let coincidence = 0;
+        if (book.genre == genre) coincidence++;
+        if (book.isModernLiterature == modern.checked) coincidence++;
+        if (book.isRussianAuthor == rus.checked) coincidence++;
+        if (coincidence == 3) {
+            result.innerHTML = `Вам подойдёт ${book.title}`;
+            found = true; 
+            break; 
+        } 
     }
-    return sum / i; 
+    if (!found) result.innerHTML = "Ничего не найдено";
 }
-getBookInfo(books[0]);
-addRating(books[0], 5, 5);
-console.log(getAverageRating(books[0]))
-const searchBook = () => {
-let genre;
-let modern;
-let rus;
-
-do {
-    genre = +prompt("Какой жанр предпочитаете?\n1 - Роман\n2 - Детектив\n3 - Фэнтези")
-} while (genre > 3 || genre < 1 || isNaN(genre))
-modern = confirm("Предпочитаете современную литературу?")
-rus = confirm("Хотели бы книгу русского автора?")
-let found = false;
-for (let i = 0; i < books.length; i++)
-{
-    let book = books[i];
-    let coincidence = 0;
-    if (book.genre == genre) coincidence++;
-    if (book.isModernLiterature == modern) coincidence++;
-    if (book.isRussianAuthor == rus) coincidence++;
-    if (coincidence == 3) {
-        alert(`Вам подойдет ${book.title}`);
-        found = true; 
-        break; 
-    } 
-}
-if (!found) alert("Ничего не подошло")
-}
-searchBook();

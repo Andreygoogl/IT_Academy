@@ -1,0 +1,301 @@
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e9d69e;
+        }
+        .head {
+            display: flex;
+            background-color: #e9d69e;
+            height: 120px;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            width: 120px;
+            margin-right: 20px;
+        }
+        .menu li {
+            display: inline-block;
+            margin: 0 10px;
+            font: 20px 'Montserrat Alternates', sans-serif;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: #6b4f3a;
+            position: relative;
+        }
+        .menu a::after {
+            content: "";
+            height: 2px;
+            width: 100%;
+            left:0;
+            bottom: -3px;
+            background-color: #6b4f3a;
+            position: absolute;
+            transform-origin: left;
+            transition: all linear 0.4s;
+            transform: scaleX(0);
+        }
+        .menu a:hover::after {
+            transform-origin: right;
+            transform: scaleX(1);
+        }
+        .mobileMenu {
+                display: block;
+                position: fixed;
+                left:0;
+                top: 0;
+                width: 250px;
+                height: 100%;
+                background: #e9d69e;
+                transform: translateX(-100%);
+                transition: transform 0.5s ease;
+                z-index: 1000;
+                font: 25px 'Montserrat Alternates', sans-serif;
+        }
+        .cross {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .mobileMenu li {
+            margin: 10px 0;
+        }
+        .mobileMenu a {
+            text-decoration: none;
+            color:#6b4f3a;
+        }
+        .menuBtn {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        .foot {
+            display: flex;
+            background-color: #e9d69e;
+            padding: 10px 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font: 17px 'Montserrat Alternates', sans-serif;
+            margin: 0;
+        }
+        .foot-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .foot > p {
+            margin: 0;
+        }
+        .socials {
+            margin-left: 20px;
+        }
+        .socials > svg {
+            margin: 5px;
+        }
+        .contacts > h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .history {
+            font: 20px 'Montserrat Alternates', sans-serif;
+        }
+        .historyText {
+            display: flex;
+            flex-direction: row;
+            gap:10px;
+            align-items: center;
+        }
+        .historyText img {
+            width: 400px;
+            height: 500px;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        .history > h1 {
+            margin-left: 10px;
+        }
+        .historyText > p {
+            text-align: justify;
+            margin-right: 20px;
+        }
+        .team {
+            font: 20px 'Montserrat Alternates', sans-serif;
+            margin-left:10px;
+        }
+        .team-line {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        .team-line > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-line > div > img { 
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .team-line > div > p {
+            text-align: center;
+            width: 250px;
+        }
+        .map {
+            width: 600px;
+            height: 450px;
+            border: 3px solid #6b4f3a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .map iframe {
+            border-radius: 10px;
+        }
+        .placement {
+            font: 20px 'Montserrat Alternates', sans-serif;
+            margin-left: 10px;
+        }
+        .mapBox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+        }
+        .book {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        .orderBtn {
+            border-radius: 10px;
+            border: solid 2px rgba(233, 214, 158, 0);
+            background-color: rgba(107, 79, 58, 0.4);
+            color: white;
+            padding: 15px;
+            font: 20px 'Montserrat Alternates', sans-serif;
+            transition: background-color 1s linear;
+        }
+        .orderBtn:hover {
+            background-color: rgba(107, 79, 58, 1);
+        }
+        .order {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .order.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        form {
+            background-color: white;
+            color:#6b4f3a;
+            border-radius: 15px;
+            width: 400px;
+            font: 20px 'Montserrat Alternates', sans-serif;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transform: translateY(-20px);
+            transition: transform 0.5s ease;
+        }
+        .active form {
+            transform: translateY(0);
+        }
+        fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0;
+        }
+        legend {
+            text-align: center;
+        }
+        form button, form input {
+            font: inherit;
+        }
+        @media all and (max-width:1168px) {
+            .team-line {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        }
+        @media all and (max-width: 1024px) {
+            nav.menu {
+                display: none;
+            }
+            .logo {
+                margin-right: 0;
+            }
+            .menuBtn {
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+            .head {
+                position: relative;
+            }
+            .mobileMenu.open {
+                transform: translateX(0);
+            }
+            .mapBox {
+            flex-direction: column;
+            }
+        }
+        @media all and (max-width: 950px) {
+            .historyText {
+                display: block;
+            }
+            .historyText img {
+                width: 300px;
+                height: 400px;
+                object-fit: cover;
+                float: left;
+            }
+            .historyText > p {
+                margin-left: 10px;
+            }
+        }
+        @media all and (max-width: 660px) {
+            .historyText img {
+                display: block;
+                float: none;
+            }
+            .historyText {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media all and (max-width: 640px) {
+            .features > div.features-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .feature-item {
+                width: 400px;
+            }
+        }

@@ -1,17 +1,21 @@
 let name
+let surname 
+let fatherName
 let age
+let ageNumb
 do {
-    name = prompt('Ваше ФИО')
-    if (name.trim() !== "" && name !== null && name !== undefined) {
-        break;
-    }
-} while(true)
+    name = prompt('Ваша фамилия')
+} while(!name || name.trim() == "")
 do {
-    age = Number(prompt('Ваш возраст'))
-    if (!isNaN(age) && age > 0 && age < 150) {
-        break
-    }
-} while (true)
+    surname = prompt('Ваше имя')
+} while(!surname || surname.trim() == "")
+do {
+    fatherName = prompt('Ваше отчество')
+} while(!fatherName || fatherName.trim() == "")
+do {
+    age = prompt('Ваш возраст')
+    ageNumb = Number(age)
+} while (!age || isNaN(ageNumb))
 let gender = confirm('Ваш пол - мужской?')
 if (gender) {
     gender = "мужской"
@@ -27,4 +31,4 @@ if (gender == "мужской" && age > 65) {
 } else {
     retire = "нет"
 }
-alert(`Ваше ФИО: ${name}\nваш возраст в годах: ${age}\nваш возраст в днях: ${age * 365}\nчерез 5 лет вам будет: ${age + 5}\nваш пол: ${gender}\nвы на пенсии: ${retire}`)
+alert(`Ваше ФИО: ${name} ${surname} ${fatherName}\nваш возраст в годах: ${ageNumb}\nваш возраст в днях: ${ageNumb * 365}\nчерез 5 лет вам будет: ${ageNumb + 5}\nваш пол: ${gender}\nвы на пенсии: ${retire}`)

@@ -4,14 +4,14 @@ let fatherName
 let age
 let ageNumb
 do {
-    name = prompt('Ваша фамилия')
-} while(!name || name.trim() == "")
+    surname = prompt('Ваша фамилия')
+} while(!surname || surname.trim() == "" || !isNaN(surname))
 do {
-    surname = prompt('Ваше имя')
-} while(!surname || surname.trim() == "")
+    name = prompt('Ваше имя')
+} while(!name || name.trim() == "" || !isNaN(name))
 do {
     fatherName = prompt('Ваше отчество')
-} while(!fatherName || fatherName.trim() == "")
+} while(!fatherName || fatherName.trim() == "" || !isNaN(fatherName))
 do {
     age = prompt('Ваш возраст')
     ageNumb = Number(age)

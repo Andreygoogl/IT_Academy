@@ -1,4 +1,3 @@
-let line = prompt('Введите строку')
 const vowels = {
     'а': true,
     'А': true,
@@ -21,8 +20,13 @@ const vowels = {
     'ы': true,
     'Ы': true
 }
-let count = 0
+const counter = (line) => {
+    let count = 0
 for (let i = 0;i<line.length;i++) {
     if (vowels[line[i]]) count++;
 }
-console.log('Всего гласных: ' + count)
+return count
+}
+
+let line = prompt('Введите строку')
+console.log('Всего гласных: ' + counter(line))

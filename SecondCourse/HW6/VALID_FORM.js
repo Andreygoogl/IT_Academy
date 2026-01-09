@@ -98,7 +98,7 @@ function validateFuncSubmit(event) {
             event.preventDefault()
             if (!firstError) firstError = comms
         } else commsDiv.style.display = "none"
-        if (!priceValue || priceValue == "pay") { 
+        if (!priceValue) { 
             priceDiv.style.display = "inline-block"
             event.preventDefault()
             if (!firstError) firstError = price

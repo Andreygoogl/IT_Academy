@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label:not([for="1"]):not([for="2"]):not([for="3"]) {
+            display: inline-block;
+            width: 150px;
+        }
+        textarea {
+            width: 350px;
+            height: 100px;
+        }
+        input[type="text"], [type="email"], [type="number"] {
+            width: 200px;
+        }
+        div {
+            display: none;
+            margin-left: 10px;
+            text-decoration: underline red;
+            font: red 10px italic;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://fe.it-academy.by/TestForm.php" method="post" name="Valid">
+        <label for= "credits">Разработчики:</label>
+        <input type="text" name="creditsSite" id = "credits">
+        <div class="creditsErr">Неверное значение</div><br>
+        <label for="siteName">Название сайта:</label>
+        <input type="text" name="nameSite" id="siteName">
+        <div class="nameErr">Неверное значение</div><br>
+        <label for="urlName">URL сайта:</label>
+        <input type="url" name="urlSite" id="urlName">
+        <div class="urlErr">Неверное значение</div><br>
+        <label for="startDate">Дата запуска сайта:</label>
+        <input type="date" name="dateSite" id="startDate">
+        <div class="dateErr">Неверное значение</div><br>
+        <label for="users">Посетителей в сутки:</label>
+        <input type="number" name="usersSite" id="users">
+        <div class="numberErr">Неверное значение</div><br>
+        <label for="mail">E-mail для связи:</label>
+        <input type="email" name="emailSite" id="mail">
+        <div class="mailErr">Неверное значение</div><br>
+        <label for="catalogue">Рубрика каталога:</label>
+        <select name="catalogueSite">
+            <option value="appliances" selected>бытовая техника</option>
+            <option value="comfort">домашний уют</option>
+            <option value="health">здоровье</option>
+        </select>
+        <div class="catalogueErr">Неверное значение</div><br>
+        <label>Размещение:</label>
+        <input type="radio" name="price" value="free" id="1">
+        <label for="1">Бесплатное</label>
+        <input type="radio" name="price" value="pay" id="2">
+        <label for="1">Платное</label>
+        <input type="radio" name="price" value="VIP" id="3">
+        <label for="1">VIP</label>
+        <div class="radioErr">Неверное значение</div><br>
+        <label for="allowComms">Разрешить отзывы:</label>
+        <input type="checkbox" name="comms" id="allowComms">
+        <div class="commsErr">Неверное значение</div><br>
+        <label for="descrips">Описание сайта:</label><br>
+        <textarea name="description" id="descrips"></textarea>
+        <div class="descriptionErr">Неверное значение</div><br>
+        <input type="submit" value="Опубликовать" name="btn">
+    </form>
+    <script src="./VALID_FORM.js"></script>
+</body>
+</html>

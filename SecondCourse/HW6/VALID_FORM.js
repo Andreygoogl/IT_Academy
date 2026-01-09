@@ -146,7 +146,7 @@ function validateFuncBlurChange(event) {
             case "dateSite":
                 const dateValue = event.target.value.trim()
                 const dateDiv = document.querySelector(".dateErr")
-                if (!dateValue || dateValue < "01-01-2000") {
+                if (!dateValue || dateValue < "2000-01-01") {
                     dateDiv.style.display = "inline-block"
                 } else dateDiv.style.display = "none"
                 break;
@@ -167,7 +167,7 @@ function validateFuncBlurChange(event) {
             case "catalogueSite":
                 const catalogueValue = event.target.value
                 const catalogueDiv = document.querySelector(".catalogueErr")
-                if (!catalogueValue || catalogueValue == "comfort") {
+                if (!catalogueValue || catalogueValue == "appliances") {
                     catalogueDiv.style.display = "inline-block"
                 } else catalogueDiv.style.display = "none"
                 break;
@@ -178,7 +178,7 @@ function validateFuncBlurChange(event) {
                     if (radio.checked) priceValue = radio.value
                 })
                 const priceDiv = document.querySelector(".radioErr")
-                if (!priceValue || priceValue == "pay") {
+                if (!priceValue) {
                     priceDiv.style.display = "inline-block"
                 } else priceDiv.style.display = "none"
                 break;

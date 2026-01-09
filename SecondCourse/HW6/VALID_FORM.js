@@ -1,7 +1,8 @@
 const form = document.forms.Valid
 let firstError = null
 form.addEventListener("submit",validateFuncSubmit)
-form.addEventListener("blur", validateFuncBlur, true)
+form.addEventListener("blur", validateFuncBlurChange, true)
+form.addEventListener("change", validateFuncBlurChange, true)
 function validateFuncSubmit(event) {
     event = event || window.event
     firstError = null
@@ -85,7 +86,7 @@ function validateFuncSubmit(event) {
             event.preventDefault()
             if (!firstError) firstError = mail
         } else mailDiv.style.display = "none"
-        if (!catalogueValue || catalogueValue == "comfort") {
+        if (!catalogueValue || catalogueValue == "appliances") {
             catalogueDiv.style.display = "inline-block"
             mail.focus()
             event.preventDefault()
@@ -107,6 +108,9 @@ function validateFuncSubmit(event) {
             event.preventDefault()
             if (!firstError) firstError = descrip
         } else descripDiv.style.display = "none"
+        if (firstError) {
+            firstError.focus()
+        }
     }
         catch ( ex ) {
             console.log(ex);
@@ -114,7 +118,7 @@ function validateFuncSubmit(event) {
             event.preventDefault(); 
         }
 }
-function validateFuncBlur(event) {
+function validateFuncBlurChange(event) {
     event = event || window.event
     try {
         switch (event.target.name) {

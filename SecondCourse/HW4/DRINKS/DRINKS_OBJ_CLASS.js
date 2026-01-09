@@ -29,8 +29,8 @@ function save() {
 }
 function get () {
     let name = prompt("Название напитка")
-    if (drinkStorage.getValue(name)) {
-       let drink = drinkStorage.getValue(name)
+    let drink = drinkStorage.getValue(name)
+    if (drink) {
        alert(`Напиток ${name}
         ${drink.a==true? "Содержит алкоголь": "Безалкогольный"}
         Рецепт приготовления: 
@@ -39,8 +39,7 @@ function get () {
 }
 function deleteDrink () {
     let name = prompt("Какой напиток удалить?")
-    if (drinkStorage.getValue(name)) {
-        drinkStorage.deleteValue(name)
+    if (drinkStorage.deleteValue(name)) {
         alert(`Удалён напиток ${name}`)
     } else alert("Нет такого напитка")
 }

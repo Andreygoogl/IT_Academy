@@ -18,41 +18,59 @@
   let moving = false
   let deltaX
   let deltaY
-  let coordinatesTop
   let coordinatesLeft
-function dragStart(event) {  
-  event.preventDefault()  
-  mouseX = event.clientX
-  mouseY = event.clientY 
-  moveObject = event.target
-  moving = true
-  moveObject.style.zIndex = "10"
-  const coordinates = moveObject.getBoundingClientRect()
-  coordinatesLeft = coordinates.left
-  coordinatesTop = coordinates.top
-}
-function dragEnd(event) {
-  event.preventDefault()
-  moveObject.style.zIndex = "0"
-  document.body.style.cursor = "auto"
-  moving = false
-}
-function dragMove(event) {
-  event.preventDefault()
-  if (moving == true) {
-    document.body.style.cursor = "move"
-    deltaX = event.clientX - mouseX
-    deltaY = event.clientY - mouseY
-    moveObject.style.position = "absolute"
-    moveObject.style.left = (coordinatesLeft + deltaX) + "px"
-    moveObject.style.top = (coordinatesTop + deltaY) + "px"
+  let coordinatesTop
+
+  window.addEventListener('load', function() {
+    const positions = []
+    imgCol.forEach((img) => {
+      const rect = img.getBoundingClientRect()
+      positions.push({
+        left: rect.left,
+        top: rect.top
+      })
+    })
+    imgCol.forEach((img, index) => {
+      img.style.position = "absolute"
+      img.style.left = positions[index].left + "px"
+      img.style.top = positions[index].top + "px"
+      img.addEventListener("mousedown", dragStart)
+    })
+  })
+  document.addEventListener("mouseup", dragEnd)
+  document.addEventListener("mousemove", dragMove)
+
+  function dragStart(event) {  
+    event.preventDefault()  
+    mouseX = event.clientX
+    mouseY = event.clientY 
+    moveObject = event.target
+    moving = true
+    const rect = moveObject.getBoundingClientRect()
+    coordinatesLeft = rect.left
+    coordinatesTop = rect.top
+    moveObject.style.zIndex = "10"
   }
-}
-imgCol.forEach((img) => {
-  img.addEventListener("mousedown", dragStart)
-})
-document.addEventListener("mouseup", dragEnd)
-document.addEventListener("mousemove", dragMove)
+
+  function dragEnd(event) {
+    event.preventDefault()
+    if (moveObject) {
+      moveObject.style.zIndex = "0"
+    }
+    document.body.style.cursor = "auto"
+    moving = false
+  }
+
+  function dragMove(event) {
+    event.preventDefault()
+    if (moving == true) {
+      document.body.style.cursor = "move"
+      deltaX = event.clientX - mouseX
+      deltaY = event.clientY - mouseY
+      moveObject.style.left = (coordinatesLeft + deltaX) + "px"
+      moveObject.style.top = (coordinatesTop + deltaY) + "px"
+    }
+  }
 </script>
   </body>
 </html>

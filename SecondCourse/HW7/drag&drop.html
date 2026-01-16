@@ -20,7 +20,7 @@
   let deltaY
   let coordinatesLeft
   let coordinatesTop
-
+  let maxZIndex = 0
   window.addEventListener('load', function() {
     const positions = []
     imgCol.forEach((img) => {
@@ -34,6 +34,7 @@
       img.style.position = "absolute"
       img.style.left = positions[index].left + "px"
       img.style.top = positions[index].top + "px"
+      img.style.zIndex = 0
       img.addEventListener("mousedown", dragStart)
     })
   })
@@ -49,14 +50,12 @@
     const rect = moveObject.getBoundingClientRect()
     coordinatesLeft = rect.left
     coordinatesTop = rect.top
-    moveObject.style.zIndex = "10"
+    maxZIndex++
+    moveObject.style.zIndex = maxZIndex
   }
 
   function dragEnd(event) {
     event.preventDefault()
-    if (moveObject) {
-      moveObject.style.zIndex = "0"
-    }
     document.body.style.cursor = "auto"
     moving = false
   }

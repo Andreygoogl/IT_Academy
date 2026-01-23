@@ -76,6 +76,7 @@ function createArrow(width, height, index) {
     bigCircle.appendChild(arrow)
 }
 
+
 function createCircle() {
     const circle = document.getElementById("сircle")
     if (circle) {
@@ -96,9 +97,9 @@ function createCircle() {
     createArrow(width/arrowMinMulti, width/arrowHeightMin, "minutes")
     createArrow(width/arrowSecMulti, width/arrowHeightSec, "seconds")
     dateDisplay(width/2)
+    updateTime()
     for (let i = 1; i <= 12; i++) {
         createSmallCircle(i)
-
     }
 }
 

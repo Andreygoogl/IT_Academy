@@ -61,7 +61,6 @@ function createSmallCircle(index, context) {
         const angleRad = (angle * Math.PI) / 180
         const x = offsetRadius * Math.cos(angleRad) + canvasWidth/2
         const y = offsetRadius * Math.sin(angleRad) + canvasWidth/2
-
         context.strokeStyle = "green"
         context.beginPath()
         context.arc(x,y,width/15,0,Math.PI*2,false)
@@ -109,6 +108,7 @@ function createArrow(stroke, context, angle, length) {
     context.moveTo(x1,y1)
     context.lineTo(x2,y2)
     context.stroke()
+    context.lineWidth = 1
 }
 
 function dateDisplay() {

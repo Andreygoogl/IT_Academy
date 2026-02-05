@@ -59,16 +59,8 @@ function start() {
     gameOn = true
     ball.reset()
     ball.angleSpeed()
-    if (timerId) {
-        clearInterval(timerId)
-    }
-    timerId = setInterval(tick, 10)
-}
-function stopGame() {
-    gameOn = false
-    if (timerId) {
-        clearInterval(timerId)
-        timerId = null
+    if (!timerId) {
+        timerId = setInterval(tick, 10)
     }
 }
 let counterFirst = 0
@@ -76,20 +68,19 @@ let counterSecond = 0
 const count = document.getElementById("count")
 
 function tick() {
+    if (!gameOn) return
     ball.posX += ball.speedX
     if (ball.posX + ball.width/2 > area.width) {
         ball.posX = area.width - ball.width/2
         counterSecond++
         count.innerText = `Счёт: ${counterFirst}:${counterSecond}`
-        stopGame()
-        return
+        gameOn = false
     }
     if (ball.posX - ball.width/2 < 0) {
         ball.posX = ball.width/2
         counterFirst++
         count.innerText = `Счёт: ${counterFirst}:${counterSecond}`
-        stopGame()
-        return
+        gameOn = false
     }
     if (ball.posX - ball.width/2 < blockLeft.width && 
         ball.posY + ball.height/2 > blockLeft.posY &&  

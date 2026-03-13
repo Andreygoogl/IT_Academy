@@ -1,0 +1,183 @@
+                body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column ;
+            background-color: #030810;
+            color: #0ff;
+            gap: 10px;
+        }
+        #ui {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hud-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #hud {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            font-family: "Orbitron";
+        }
+        .hud-value {
+            text-shadow: cyan 1px 0 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .hud-label {
+            color: #0aa;
+            font-size: 10px;
+        }
+        #main-field {
+            border: 1px solid #0ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30vw;
+            height: 30vw;   
+            box-shadow: 0 0 10px cyan;
+            position: relative;
+        }
+        h3 {
+            font-family: "Share Tech Mono";
+            color: #0aa;
+            text-shadow: none;
+            text-align: center;
+        }
+        #main-field h2 {
+            text-shadow: cyan 1px 0 15px;
+            font-family: "Share Tech Mono";
+            text-align: center;
+            letter-spacing: 5px;
+        }
+        #title {
+            font-family: "Orbitron";
+            text-shadow: cyan 1px 0 10px;
+            letter-spacing: 15px;
+        }
+        #hint {
+            font-family: "Share Tech Mono";
+            color: #0aa;
+        }
+        h3 {
+            font-family: "Share Tech Mono";
+            color: #0aa;
+            text-shadow: none;
+        }
+        #start-screen {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            inset: 0;
+        }
+        #end-screen {
+            position: absolute;
+            display: none;
+            background-color: rgba(3,8,16,0.88);
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            inset: 0;
+        }
+        .button {
+            width: 60%;
+            border: none;
+            background-color: cyan;
+            color: #030810;
+            font-family: "Orbitron";
+            padding: 5px;
+            cursor: pointer;
+            transition: transform 0.2s linear;
+        }
+        body::before {
+            width: 100%;
+            height: 100%;
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(rgba(0,255,255,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,255,0.07) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            animation: scrollBack infinite linear 4s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        @keyframes scrollBack {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 0 40px;
+            }
+        }
+       #flash {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #table-records {
+            position: fixed;
+            left: 80%;
+            top: 10%;
+            font-family: "Orbitron";
+            text-shadow: cyan 1px 0 10px;
+            display: none;
+            gap: 10px;
+            flex-direction: column;
+        }
+        @media (max-width: 900px) {
+            #main-field {
+                width: 50vw;
+                height: 50vw;
+            }
+            #table-records {
+                position: static;
+                text-align: center;
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 600px) {
+            #main-field {
+                width: 80vw;
+                height: 80vw;
+            }
+            #title {
+                font-size: 24px;
+                letter-spacing: 8px;
+            }
+            .hud-value {
+                font-size: 14px;
+            }
+            #hint {
+                font-size: 11px;
+                text-align: center;
+            }
+        }
+        #progress-container {
+            display: none;
+            width: 200px;
+            height: 4px;
+            background-color: rgba(0,255,255,0.2);
+            border-radius: 2px;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: cyan;
+            box-shadow: 0 0 8px cyan;
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
